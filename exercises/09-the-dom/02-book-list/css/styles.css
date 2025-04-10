@@ -1,0 +1,21 @@
+ul li {
+    color: blue;
+    font-weight: bold;
+    list-style-type: none;
+    
+  }
+  
+
+li img {
+  display: block;
+    width: 200px;
+    height: 300px;
+  } 
+
+  .read {
+    background-color: #d0ffd0;
+  }
+  .unread {
+    background-color: #ffe0e0;
+  }
+  
