@@ -1,21 +1,28 @@
+/* ===============================
+   List Items Style
+=============================== */
 ul li {
     color: blue;
     font-weight: bold;
     list-style-type: none;
-    
   }
-  
 
+/* ===============================
+   Images Style
+=============================== */
 li img {
   display: block;
     width: 200px;
     height: 300px;
   } 
 
+/* ===============================
+   Colours for Status Indicator
+=============================== */
   .read {
-    background-color: #d0ffd0;
+    background-color: #50f350;
   }
   .unread {
-    background-color: #ffe0e0;
+    background-color: #d65252;
   }
   
