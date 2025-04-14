@@ -1,0 +1,155 @@
+/* Reset browser styles*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* General Styles */
+
+/* sets rem */
+body {
+  font-size: 16px;
+  font-family: 'Garamond', serif; 
+  margin: 0;
+  padding: 0;
+  background-color: #1f1f1f; 
+  color: #f1f1f1; 
+}
+
+.container {
+  display: flex; 
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px; /* Add space for footer */
+  overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+/* Update table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #3c3c3c; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+/* Update footer styles */
+footer {
+  background-color: #6a0dad;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Fixed height for footer */
+}
+
+header {
+  background-color: #6a0dad; 
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+/* Navigation Panel */
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* Flights Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #3c3c3c; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+  padding-bottom: 50px;
+  
+}
+
+th, td {
+  border: 1px solid #444; 
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #800080; 
+  color: white;
+  font-size: 18px;
+}
+
+td {
+  font-size: 16px;
+}
+
+td.delayed, td.cancelled {
+  background-color: #dc143c; 
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #6a0dad;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  
+}
+
+/* Additional Styles */
+h1 {
+  font-size: 2.5em;
+  letter-spacing: 1px;
+}
+
+h1, p {
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+ul.navbar li a:hover {
+  text-decoration: underline;
+  color: #d9a000; 
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #4b0082; 
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #3b2a45; 
+}

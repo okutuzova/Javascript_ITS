@@ -1,6 +1,14 @@
+/* Personalized styles for the list items */
 .list-item {
-    color: white;
-    font-weight: bold;
-    background-color: orange;
-  }
-  
+  color: white;
+  font-weight: bold;
+  background-color: orange;
+}
+
+img {
+  max-width: 300px; 
+  height: auto;    
+  border-radius: 10px; 
+  display: block;
+  margin-top: 20px;
+}

@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.stack {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    overflow-y: auto;
+}
+.stack h3 {
+    text-align: center;
+}
+.dish {
+    margin: 5px;
+    padding: 5px;
+    background-color: lightblue;
+    text-align: center;
+    border-radius: 3px;
+}

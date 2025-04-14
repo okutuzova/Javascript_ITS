@@ -58,7 +58,7 @@ for (let i = 0; i < books.length; i++) {
     let bookInfo = `${book.title} by ${book.author}`; 
     // Create list item
     let li = document.createElement('li');
-    let text = document.createElement('p')
+    let text = document.createElement('p');
     // Add text node with the book information
     text.textContent = bookInfo;
     // Add image

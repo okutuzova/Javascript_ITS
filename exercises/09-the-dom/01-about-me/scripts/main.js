@@ -3,6 +3,9 @@
  * @author Olga Kutuzova
  * @description 01-about-me
  *
+ * This script changes the content of the page. 
+ * It changes the font-family, nickname, favorites, and hometown, and adds a photo.
+ * It also connects the external CSS file. 
  */
 
 // Change body font-family
@@ -21,7 +24,7 @@ allLi.forEach(li => {
 
 // Create <img> and add a link to a photo
 let img = document.createElement('img');
-img.src = '';
+img.src = './img/photo-1543852786-1cf6624b9987.jpg';
 img.alt = 'My photo';
 document.body.appendChild(img);
 
