@@ -41,6 +41,8 @@ This simulation uses JavaScript arrays to represent stacks of dishes, following 
   - If fewer than 2 dishes are collected, it attempts to take one more from the third stack.
   - The collected dishes are moved into the clean stack and displayed on screen.
 
+Added additional functionality on April 17, 2025. A function that shuffles the stacks was added. This allows to choose a random stack from which the dishes are taken. 
+
 #### Functions:
 - `washDish()`: Moves a dish from the dirty stack to the clean stack.
 - `drawStacks()`: Updates the DOM to display the current state of both stacks.

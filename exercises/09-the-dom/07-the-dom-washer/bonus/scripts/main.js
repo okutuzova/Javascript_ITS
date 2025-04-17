@@ -25,6 +25,17 @@ function randInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ * Fisher-Yates shuffle algorithm
+ * @param {array} array 
+ */
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = randInt(0, i); // Random index from 0 to i
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+}
+
 
 // adding a random number of dirty dishes to stacks
 for (let i = 0; i < randInt(10, 50); i++) dirtyStackOne.push(`Dish ${i + 1} from Stack One`);
@@ -35,18 +46,41 @@ for (let i = 0; i < randInt(10, 30); i++) dirtyStackThree.push(`Dish ${i + 1} fr
  * Removes the last dish from the dirty stack and adds it to the clean stack.
  * @returns {void}
  */
+// function washDish() {
+//     let washedDishesTemp = [];
+
+//     // checking if there are dishes in the dirty stacks
+//     if (dirtyStackOne.length > 0) washedDishesTemp.push(dirtyStackOne.pop());
+//     if (dirtyStackTwo.length > 0) washedDishesTemp.push(dirtyStackTwo.pop());
+//     // if only one dish was taken, then take from the third stack
+//     if (washedDishesTemp.length < 2 && dirtyStackThree.length > 0) washedDishesTemp.push(dirtyStackThree.pop());
+//     //moving washed dishes to the clean stack
+//     cleanStack = cleanStack.concat(washedDishesTemp).flat();
+//     drawStacks();
+//     //logging the washed dishes
+//     console.log(`Washed: ${washedDishesTemp.join(", ")}`);
+// }
 function washDish() {
     let washedDishesTemp = [];
 
-    // checking if there are dishes in the dirty stacks
-    if (dirtyStackOne.length > 0) washedDishesTemp.push(dirtyStackOne.pop());
-    if (dirtyStackTwo.length > 0) washedDishesTemp.push(dirtyStackTwo.pop());
-    // if only one dish was taken, then take from the third stack
-    if (washedDishesTemp.length < 2 && dirtyStackThree.length > 0) washedDishesTemp.push(dirtyStackThree.pop());
-    //moving washed dishes to the clean stack
+    // Group dirty stacks in an array
+    const stacks = [dirtyStackOne, dirtyStackTwo, dirtyStackThree];
+    
+    // Shuffle the array using your custom shuffle function
+    shuffleArray(stacks);
+
+    // Try to pull up to 2 dishes from random stacks
+    for (let stack of stacks) {
+        if (stack.length > 0) {
+            washedDishesTemp.push(stack.pop());
+        }
+        if (washedDishesTemp.length === 2) break;
+    }
+
+    // Move to clean stack
     cleanStack = cleanStack.concat(washedDishesTemp).flat();
     drawStacks();
-    //logging the washed dishes
+
     console.log(`Washed: ${washedDishesTemp.join(", ")}`);
 }
 
