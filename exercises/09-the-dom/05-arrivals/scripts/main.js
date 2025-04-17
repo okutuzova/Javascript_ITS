@@ -11,7 +11,6 @@
  *
  */
 
-
 /**
  * A list of all flights.
  * @type {Array<{ id: number, flightNumber: string, from: string, 
@@ -50,9 +49,6 @@ const flights = [
  * @type {Array<string>}
  */
 const statuses = ["ON_TIME", "DELAYED", "DEPARTING", "DEPARTED", "EN_ROUTE", "ARRIVED", "CANCELLED"];
-
-
-
 
 // helper functions
 
