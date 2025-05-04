@@ -2,16 +2,29 @@
  * @file main.js
  * @author Olga Kutuzova
  * @description 02-calculate
- *
+ * 
+ * This script handles basic arithmetic operations—squaring a number, 
+ * halving it, calculating percentage, and computing the area of a circle—based 
+ * on user input. Results are displayed in a single solution container 
+ * when the mouse is clicked.
 */
 
+// Input element references
+/** @type {HTMLInputElement} */
 const squareInput = document.querySelector('#square-input');
+/** @type {HTMLInputElement} */
 const halfInput = document.querySelector('#half-input');
+/** @type {HTMLInputElement} */
 const percentageInput = document.querySelector('#percentage-input');
+/** @type {HTMLInputElement} */
 const areaInput = document.querySelector('#area-input');
+/** @type {HTMLInputElement} */
 const calculateButton = document.getElementById('square-button');
 
-
+// Event listeners for calculation on button click
+/**
+ * Handles squaring the input value.
+ */
 calculateButton.addEventListener('click', () => {
   if (squareInput.value) {
     console.log(`result: ${squareNumber(squareInput.value)}`);
@@ -20,7 +33,9 @@ calculateButton.addEventListener('click', () => {
     addResultToDiv(result);
   }
 });
-
+/**
+ * Handles halving the input value.
+ */
 calculateButton.addEventListener('click', () => {
   if (halfInput.value) {
     console.log(`result: ${halfNumber(halfInput.value)}`);
@@ -29,7 +44,9 @@ calculateButton.addEventListener('click', () => {
     addResultToDiv(result);
   }
 });
-
+/**
+ * Handles calculating the percentage of the input value out of 100.
+ */
 calculateButton.addEventListener('click', () => {
   if (percentageInput.value) {
     console.log(`result: ${percentOf(percentageInput.value, 100)}`);
@@ -39,7 +56,9 @@ calculateButton.addEventListener('click', () => {
     addResultToDiv(`${tempPercentageInput} is ${result}% of 100.`);
   }
 });
-
+/**
+ * Handles calculating the area of a circle from the input radius.
+ */
 calculateButton.addEventListener('click', () => {
   if (areaInput.value) {
     console.log(`result: ${areaOfCircle(areaInput.value)}`);
@@ -51,7 +70,10 @@ calculateButton.addEventListener('click', () => {
   }
 });
  
-
+/**
+ * Inserts the calculation result into the solution container on the page.
+ * @param {string|number} result - The result to be displayed.
+ */
 function addResultToDiv(result) {
     document.getElementById('solution').textContent = result;
 }

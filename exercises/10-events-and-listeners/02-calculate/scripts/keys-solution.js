@@ -2,16 +2,28 @@
  * @file keys-solution.js
  * @author Olga Kutuzova
  * @description 02-calculate
- *
+ * This script handles basic arithmetic operations—squaring a number, 
+ * halving it, calculating percentage, and computing the area of a circle—based 
+ * on user input. Results are displayed in a single solution container 
+ * when the key is clicked.
 */
 
+// Input element references
+/** @type {HTMLInputElement} */
 const squareInput = document.querySelector('#square-input');
+/** @type {HTMLInputElement} */
 const halfInput = document.querySelector('#half-input');
+/** @type {HTMLInputElement} */
 const percentageInput = document.querySelector('#percentage-input');
+/** @type {HTMLInputElement} */
 const areaInput = document.querySelector('#area-input');
+/** @type {HTMLInputElement} */
 const calculateButton = document.getElementById('square-button');
 
-
+// Event listeners for calculation on button click
+/**
+ * Handles squaring the input value.
+ */
 squareInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && squareInput.value) {
       let result = squareNumber(squareInput.value);
@@ -19,8 +31,9 @@ squareInput.addEventListener('keydown', (event) => {
       addResultToDiv(result); 
     }
   });
-
-  
+/**
+ * Handles halving the input value.
+ */  
 halfInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && halfInput.value) {
       let result = halfNumber(halfInput.value);
@@ -28,8 +41,9 @@ halfInput.addEventListener('keydown', (event) => {
       addResultToDiv(result); 
     }
   });
-
-
+/**
+ * Handles calculating the percentage of the input value out of 100.
+ */
 percentageInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && percentageInput.value) {
       let result = percentOf(percentageInput.value, 100);
@@ -38,7 +52,9 @@ percentageInput.addEventListener('keydown', (event) => {
       addResultToDiv(`${tempPercentageInput} is ${result}% of 100.`); 
     }
   });
-
+/**
+ * Handles calculating the area of a circle from the input radius.
+ */
 areaInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && areaInput.value) {
       let result = areaOfCircle(areaInput.value);
@@ -49,12 +65,13 @@ areaInput.addEventListener('keydown', (event) => {
     }
   });
 
-
-
+/**
+ * Inserts the calculation result into the solution container on the page.
+ * @param {string|number} result - The result to be displayed.
+ */
 function addResultToDiv(result) {
     document.getElementById('solution').textContent = result;
 }
-
 
 /**
  * Calculates a squared number. Logs the result in the output. 

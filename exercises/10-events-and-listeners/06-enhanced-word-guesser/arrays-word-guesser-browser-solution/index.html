@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Word Guesser</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Word Guesser">
+  <meta name="keywords" content="HTML, JavaScript">
+  <meta name="author" content="Olga Kutuzova">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <!-- Styles link -->
+     <!-- Linked Pico Css for pretty fomatting  -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Start of Body -->
+<div class="container">
+<h1>Word Guesser Game - Countries</h1>
+  <!-- Score Container -->
+  <div id="score">Score: 0</div>
+
+  <!-- Lives Container -->
+  <div id="errors-remaining"></div>
+
+  <!-- Used Letters Container -->
+  <div id="used-letters"></div>
+
+  <!-- Game Container -->
+  <div class="game-container">
+  
+  <!-- SVG container -->
+  <svg height="250" width="200" class="figure-container">
+ <!-- Stand -->
+ <line x1="60" y1="20" x2="140" y2="20" stroke="#000" stroke-width="4" />
+ <line x1="140" y1="20" x2="140" y2="50" stroke="#000" stroke-width="4" />
+ <line x1="60" y1="20" x2="60" y2="230" stroke="#000" stroke-width="4" />
+ <line x1="20" y1="230" x2="100" y2="230" stroke="#000" stroke-width="4" />
+
+ <!-- Body Parts -->
+ <circle cx="140" cy="70" r="20" class="figure-part hidden" stroke="#000" stroke-width="4" fill="none" />
+ <line x1="140" y1="90" x2="140" y2="150" class="figure-part hidden" stroke="#000" stroke-width="4" />
+ <line x1="140" y1="120" x2="120" y2="100" class="figure-part hidden" stroke="#000" stroke-width="4" />
+ <line x1="140" y1="120" x2="160" y2="100" class="figure-part hidden" stroke="#000" stroke-width="4" />
+ <line x1="140" y1="150" x2="120" y2="180" class="figure-part hidden" stroke="#000" stroke-width="4" />
+ <line x1="140" y1="150" x2="160" y2="180" class="figure-part hidden" stroke="#000" stroke-width="4" />
+</svg>
+</div>
+
+<div id="word-display"></div>
+  <!-- <p class="word" id="wordDisplay">_ _ _ _</p>
+  <p class="message" id="message"></p>
+  <div class="letters" id="letters"></div> -->
+<input type="text" id="input-letter" maxlength="1" required placeholder="Letter" />
+<button id="restart-btn">New Game</button>
+
+<div id="message"></div>
+  
+
+<!-- here .container general ends -->
+</div>
+  <!-- End of Body -->
+  <!-- Javascript Code -->
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
+
+
+
+
