@@ -1,4 +1,5 @@
-/* Reset browser styles*/
+/* ========== RESET ========== */
+/* Reset browser default spacing and box model */
 *,
 *::before,
 *::after {
@@ -7,7 +8,7 @@
     padding: 0;
 }
 
-/* Set global styles */
+/* ========== GLOBAL STYLES ========== */
 * {
     box-sizing: border-box;
 }
@@ -38,9 +39,9 @@ h1 {
     margin-bottom: 20px;
   }
 
-/* .figure-part {
-    display: none;
-  } */
+/* ================= */
+/* HANGMAN FIGURE    */
+/* ================= */
 
 /* hides a part of the hangman */
 .hidden {
@@ -48,11 +49,13 @@ h1 {
   }
   
   /* shows a part of the hangman */
-  .visible {
+.visible {
     display: block;
   }
   
-
+/* ======================= */
+/* GAME DISPLAY ELEMENTS   */
+/* ======================= */
 #word-display {
     font-size: 32px;
     letter-spacing: 10px;
@@ -78,6 +81,9 @@ h1 {
     text-align: center;
   }
 
+/* =================== */
+/* BUTTON STYLING      */
+/* =================== */
 button {
     padding: 10px 20px;
     font-size: 16px;
