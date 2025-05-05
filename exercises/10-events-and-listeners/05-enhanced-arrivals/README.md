@@ -1,4 +1,4 @@
-# Exercise: 05-arrivals
+# Exercise: 05-enhanced-arrivals
 
 ## Author Details
 - **Name:** Olga Kutuzova  
@@ -7,18 +7,15 @@
 
 
 ## Exercise Requirements
-● Implement the arrivals page of an airport such as this one http://www.aeroportoditorino.it/en/tofly/flights/departs-arrivals
-○ Create a complete proper webpage with a title, description and all other HTML tags 
-○ Add Javascript and CSS files
-○ Include as much detail as you can to each flight row
-○ Add a Status to each flight. Status can be DEPARTING, DELAYED, ON_TIME, ARRIVED, etc
-● Simulate a real arrivals list
-○ The list should start empty and update every 10 seconds
-○ Flights that have arrived should be removed after 60 seconds
-○ Flights should change status in time. E.g. departing>on_time>delayed>arrived
-○ Flights that are delayed should be displayed in red
-○ New flights should be added to the bottom of the list
-○ The list should be sorted by date and hour
+● Start with the ‘Arrivals’ exercise from a previous lesson
+● Add the following features:
+○ When the user clicks a row, it should expand to show more information about the flight
+○ When the user clicks an open row it should close again
+○ If the user clicks a row, any other open rows should close
+■ Like in this example of an accordion
+○ Add a ‘Departures’ section with departing flights
+○ The user should be able to switch between Arrivals and Departures with a fade-in/fade-out 
+animation
 
  
 ## Solution
@@ -49,12 +46,20 @@ This project consists of three main files:
 
 3. **JavaScript (`main.js`)**:
    - A **list of flights** is predefined with all the necessary data: flight number, from location, time, date, gate, and airline.
-   - Every **10 seconds**, the next flight is added to the table.
+   - Every **10 seconds**, the next flight is added to the table with Arrivals.
+   - Every **5 seconds**, the next flight is added to the table with Departures.
    - Flight statuses are randomly selected from a list of possible statuses (`ON_TIME`, `DELAYED`, `DEPARTING`, `ARRIVED`, etc.).
    - The **status update** cycle automatically progresses (e.g., from `DEPARTING` to `ON_TIME` to `DELAYED` to `ARRIVED`).
    - If a flight's status becomes `ARRIVED`, it is **removed after 60 seconds**.
    - Flights are **added to the bottom of the list** and the table **updates automatically** every 10 seconds. 
-
+ - Accordion functionality is implemented to show/hide additional information about each flight.
+When a user clicks on a table row:
+- The next row (containing extra flight info) is shown
+- Any previously open row is closed
+- Implemented via toggleAccordion() and CSS .active class
+Clicking Arrivals or Departures:
+- Updates page title and heading
+- Uses .active and animation classes to toggle visibility with a fade effect
 
 ### Technologies Used
 - **HTML5:** For the structure of the page.

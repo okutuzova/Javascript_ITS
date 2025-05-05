@@ -28,7 +28,8 @@ When the cat reaches the right side of the screen, it starts from the left again
 ### Variant 2:
 A boolean flag that indicates the direction of movement is added. The image moves to the right and when the right edge of the image reaches the window's right side, the direction changes and image is flipped horizontally. The image is moved to the left and when the left edge of the image reaches the window's left side, the direction changes and image is flipped horizontally. The walk is imitated by setting the interval to 50ms. The image is moved by adjusting its margin-left property.
 
- 
+### Variant 3:
+This variant enhances the cat walk animation with a special middle-screen interaction. The cat moves across the screen as in Variant 2, but when it reaches the middle, a new static cat image appears and stays for 10 seconds. During this pause, the movement stops. After the timeout, the original walking cat gif returns and continues its journey, maintaining the directional movement from Variant 2 (moving right to left and flipping the image accordingly). The animation uses position tracking to determine the middle point and setTimeout for managing the image swap and pause duration.
 
 
 ## Files:

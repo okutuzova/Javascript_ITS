@@ -1,14 +1,11 @@
 /**
  * @file main.js
  * @author Olga Kutuzova
- * @description 05-arrivals
- * This file contains the main JavaScript code for the 05-arrivals project.
+ * @description 05-enhanced-arrivals
+ *
+ * This script simulates a flight arrivals and departures system.
  * It includes functions for adding flights to the table, updating flight statuses,
- * and generating random statuses for flights.
- *
- * @version 1.0.0
- * @date 2025-04-13
- *
+ * and generating random statuses for flights. Pages include departures and arrivals. 
  */
 
 /**
@@ -50,6 +47,42 @@ const flights = [
  */
 const statuses = ["ON_TIME", "DELAYED", "DEPARTING", "DEPARTED", "EN_ROUTE", "ARRIVED", "CANCELLED"];
 
+/**
+ * Reference to the arrivals table body element.
+ * @type {HTMLElement}
+ */
+const arrivalsTableBody = document.querySelector('#arrivals-table tbody');
+/**
+ * Reference to the departures table body element.
+ * @type {HTMLElement}
+ */
+const departuresTableBody = document.querySelector('#departures-table tbody');
+/**
+ * Button to show Arrivals page.
+ * @type {HTMLElement}
+ */
+const btnArrivals = document.querySelector('#link-arrivals');
+/**
+ * Button to show Departures page.
+ * @type {HTMLElement}
+ */
+const btnDepartures = document.querySelector('#link-departures');
+/**
+ * Section for Arrivals.
+ * @type {HTMLElement}
+ */
+const arrivals = document.querySelector('#arrivals');
+/**
+ * Section for Departures.
+ * @type {HTMLElement}
+ */
+const departures = document.querySelector('#departures');
+/**
+ * Header title element.
+ * @type {HTMLElement}
+ */
+const headerTitle = document.querySelector('#title');
+
 // helper functions
 
 /**
@@ -84,14 +117,12 @@ function statusArrivedCheck(row, status) {
     }
 }
 
-const arrivalsTableBody = document.querySelector('#arrivals-table tbody');
-const departuresTableBody = document.querySelector('#departures-table tbody');
-
 /**
  * Adds a new flight to the arrivals table.
  * A flight is added by shifting the first flight from the `flights` array.
  * The flight status is randomly assigned.
  * The flight's row is appended to the table.
+ * @param {HTMLElement} tableBody - The tbody element of the target table.
  */
 function addFlight(tableBody) {
     // Add a flight to the table, deleting from the original list
@@ -117,18 +148,13 @@ function addFlight(tableBody) {
         hiddenRow.classList.add('hidden-row');
         hiddenRow.innerHTML = `
             <td colspan="7"><div>Additional information on the flight</div></td>
-            `
+            `;
         // If the status is "ARRIVED", remove the row after 60 seconds
         statusArrivedCheck(row, flight.status);
         tableBody.appendChild(row);
         tableBody.appendChild(hiddenRow);
     }
 }
-
-// Start adding flights with different intervals
-setInterval(() => addFlight(arrivalsTableBody), 10000);
-setInterval(() => addFlight(departuresTableBody), 5000);
-
 
 /**
  * Updates the statuses of all flights in the table according to the next status in the sequence.
@@ -154,25 +180,12 @@ function updateStatuses() {
         }
     });
 }
-// Update statuses every 10 seconds
-setInterval(updateStatuses, 10000); 
 
-// Event listener for accordion
-// const tbody = document.querySelector('#arrivals-table tbody');
-
-// tbody.addEventListener('click', (event) => {
-//     // Find the clicked row
-//     const clickedRow = event.target.closest('.main-row');
-//     if (clickedRow) {
-//         // Toggle the active class on the clicked row
-//         const nextRow = clickedRow.nextElementSibling;
-//         if (nextRow && nextRow.classList.contains('hidden-row')) {
-//             nextRow.classList.toggle('active');
-//         }
-        
-//     }
-// })
-
+/**
+ * Toggles the visibility of the accordion row under a clicked flight row.
+ * Only one accordion is visible at a time.
+ * @param {MouseEvent} event - The click event on a table row.
+ */
 function toggleAccordion(event) {
     const clickedRow = event.target.closest('.main-row');
     if (!clickedRow) return;
@@ -193,45 +206,12 @@ function toggleAccordion(event) {
 
 }
 
-document.addEventListener('click', toggleAccordion);
-  
-    
-  
-    
-
-  
-
-
-// document.addEventListener('click', function (event) {
-//     const clickedRow = event.target.closest('.main-row');
-
-//     if (!clickedRow) return;
-  
-//     const allHiddenRows = document.querySelectorAll('.hidden-row');
-//     const currentHidden = clickedRow.nextElementSibling;
-  
-//     allHiddenRows.forEach(row => {
-//       if (row !== currentHidden) {
-//         row.classList.remove('active'); // Closing all the hidden rows
-//       }
-//     });
-  
-//     // Toggling hidden rows
-//     if (currentHidden && currentHidden.classList.contains('hidden-row')) {
-//       currentHidden.classList.toggle('active');
-//     }
-//   });
-  
-const btnArrivals = document.querySelector('#link-arrivals');
-const btnDepartures = document.querySelector('#link-departures');
-const arrivals = document.querySelector('#arrivals');
-const departures = document.querySelector('#departures');
-const headerTitle = document.querySelector('#title');
-
 // Set initial title
 headerTitle.textContent = 'Arrivals - Hogsmeade International Airport';
 document.title = 'Arrivals | Hogsmeade International Airport (HGM)';
 
+// Event listeners
+document.addEventListener('click', toggleAccordion);
 btnArrivals.addEventListener('click', () => {
     headerTitle.textContent = 'Arrivals - Hogsmeade International Airport';
     document.title = 'Arrivals | Hogsmeade International Airport (HGM)';
@@ -243,4 +223,10 @@ btnDepartures.addEventListener('click', () => {
     document.title = 'Departures | Hogsmeade International Airport (HGM)';
     arrivals.classList.remove('active');
     departures.classList.add('active'); 
-})
+});
+
+// Start adding flights with different intervals
+setInterval(() => addFlight(arrivalsTableBody), 10000);
+setInterval(() => addFlight(departuresTableBody), 5000);
+// Update statuses every 10 seconds
+setInterval(updateStatuses, 10000); 
