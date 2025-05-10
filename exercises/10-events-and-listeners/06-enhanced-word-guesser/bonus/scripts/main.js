@@ -49,8 +49,8 @@ let errors = 0;
 // Players score (+1 if guessed a word)
 // let score = 0;
 let scores = { 1: 0, 2: 0 };
-// Current player
-let currentPlayer = 1;
+// Current player 2 - the ternary operator on resetGame will change it to 1 on page load
+let currentPlayer = 2;
 
 /** @type {HTMLElement} */
 const wordDisplay = document.getElementById("word-display");
@@ -68,8 +68,11 @@ const errorsDisplay = document.getElementById("errors-remaining");
 const usedLettersDisplay = document.getElementById("used-letters");
 /** @type {HTMLElement} */
 const newGameButton = document.getElementById("restart-btn");
+/** @type {HTMLElement} */
 const currentPlayerDisplay = document.getElementById("current-player");
+/** @type {HTMLElement} */
 const score1Display = document.getElementById("score1");
+/** @type {HTMLElement} */
 const score2Display = document.getElementById("score2");
 
 

@@ -16,7 +16,9 @@ const halfScreenWidth = screenWidth / 2;
 /** @type {HTMLImageElement}*/
 const img = document.querySelector('img');
 // images URLs
-const originalImage = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+// had to change to the local gif in img folder
+// firefox did not allow http link
+const originalImage = './img/cat-walk.gif';
 const newCatPicUrl = 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg';
 //starting position and direction
 let leftMargin = 0;
