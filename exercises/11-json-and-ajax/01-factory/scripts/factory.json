@@ -1,0 +1,18 @@
+{
+    "factoryName": "Car Production & Co",
+    "location": "Turin, TO",
+    "yearEstablished": 1945,
+    "productionCapacity": 50000,
+    "inventory": {
+        "totalCars": 1200,
+        "availableForSale": 800
+        
+    },
+    "usedCars": null,
+    "certified": true,
+    "General Managers": [
+        "John Doe",
+        "Jane Smith"
+    ]
+    
+}

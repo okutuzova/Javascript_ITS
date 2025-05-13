@@ -1,0 +1,22 @@
+{
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": "2020",
+    "color": "red",
+    "mileage": null,
+    "fuel": "gasoline",
+    "transmission": "automatic",
+    "price": 40000,
+    "new": true,
+    "features": ["GPS", "Bluetooth", "Backup Camera", "Cruise Control", "Keyless Entry"],
+    "engine": {
+        "type": "inline-4",
+        "cylinders": 4,
+        "horsepower": 169,
+        "fuelEconomy": {
+            "city": "30 mpg",
+            "highway": "38 mpg"
+        }
+    },
+    "description": "A comfortable and reliable Toyota Corolla with a great fuel economy."
+}
