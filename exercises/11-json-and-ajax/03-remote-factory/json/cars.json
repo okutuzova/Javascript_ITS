@@ -1,5 +1,6 @@
 [
-    {   "id": 1,
+    {
+        "id": 1,
         "brand": "Toyota",
         "model": "Corolla",
         "year": "2020",
@@ -9,7 +10,13 @@
         "transmission": "automatic",
         "price": 40000,
         "new": true,
-        "features": ["GPS", "Bluetooth", "Backup Camera", "Cruise Control", "Keyless Entry"],
+        "features": [
+            "GPS",
+            "Bluetooth",
+            "Backup Camera",
+            "Cruise Control",
+            "Keyless Entry"
+        ],
         "engine": {
             "type": "inline-4",
             "cylinders": 4,
@@ -32,7 +39,13 @@
         "transmission": "automatic",
         "price": 35000,
         "new": true,
-        "features": ["GPS", "Bluetooth", "Backup Camera", "Cruise Control", "Keyless Entry"],
+        "features": [
+            "GPS",
+            "Bluetooth",
+            "Backup Camera",
+            "Cruise Control",
+            "Keyless Entry"
+        ],
         "engine": {
             "type": "inline-4",
             "cylinders": 4,
@@ -54,7 +67,13 @@
         "transmission": "automatic",
         "price": 60000,
         "new": true,
-        "features": ["GPS", "Bluetooth", "Backup Camera", "Cruise Control", "Keyless Entry"],
+        "features": [
+            "GPS",
+            "Bluetooth",
+            "Backup Camera",
+            "Cruise Control",
+            "Keyless Entry"
+        ],
         "engine": {
             "type": "inline-4",
             "cylinders": 4,
@@ -76,7 +95,11 @@
         "transmission": "automatic",
         "price": 38000,
         "new": true,
-        "features": ["Bluetooth", "Backup Camera", "Cruise Control"],
+        "features": [
+            "Bluetooth",
+            "Backup Camera",
+            "Cruise Control"
+        ],
         "engine": {
             "type": "inline-4",
             "cylinders": 4,
@@ -99,7 +122,12 @@
         "transmission": "automatic",
         "price": 37000,
         "new": true,
-        "features": ["GPS", "Bluetooth", "Backup Camera", "Cruise Control"],
+        "features": [
+            "GPS",
+            "Bluetooth",
+            "Backup Camera",
+            "Cruise Control"
+        ],
         "engine": {
             "type": "inline-4",
             "cylinders": 4,

@@ -6,7 +6,6 @@
     "inventory": {
         "totalCars": 1200,
         "availableForSale": 800
-        
     },
     "usedCars": null,
     "certified": true,
@@ -14,5 +13,4 @@
         "John Doe",
         "Jane Smith"
     ]
-    
 }

@@ -6,16 +6,18 @@
     "inventory": {
         "totalCars": 1200,
         "availableForSale": 800
-        
     },
     "usedCars": null,
     "certified": true,
     "General Managers": [
         "John Doe",
         "Jane Smith"
-    ], 
+    ],
     "newCars": [
-        1, 2, 3, 4, 5
+        1,
+        2,
+        3,
+        4,
+        5
     ]
-    
 }

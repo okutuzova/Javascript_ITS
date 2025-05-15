@@ -1,4 +1,17 @@
-// JSON as string
+/**
+ * @file: main.js
+ * @author: Olga Kutuzova
+ * Exercise 02-DOM-factory
+ * 
+ * This script creates a car factory and a list of cars in JSON strings.
+ * The strings are parsed into objects and displayed on the webpage.
+ */
+
+// JSON as a string
+/**
+ * A car factory simulating JSON string
+ * @type {string}
+ */
 const factoryJSON = `{
     "factoryName": "Car Production & Co",
     "location": "Turin, TO",
@@ -17,6 +30,10 @@ const factoryJSON = `{
     ]
   }`;
 
+/**
+ * A list of car objects as JSON strings
+ * @type {string}
+ */
 const carsJSON = `[
     {   "id": 1,
         "brand": "Toyota",
@@ -132,25 +149,35 @@ const carsJSON = `[
     }
 ]
 `;
+
+/**
+ * Parses the JSON strings into JavaScript objects
+ */
 const parsedFactory = JSON.parse(factoryJSON);
 const parsedCars = JSON.parse(carsJSON);
 
+/** @type {HTMLElement} */
 const cars = document.getElementById("carList");
+/** @type {HTMLElement} */
 const factory = document.getElementById("factoryDetails");
 
+/**
+ * Displays the factory details on the webpage
+ */
 factory.innerHTML = `
-     
       <li><span class="title">Name:</span> ${parsedFactory.factoryName}</li>
       <li><span class="title">Location:</span> ${parsedFactory.location}</li>
       <li><span class="title">Year of Foundation:</span> ${parsedFactory.yearEstablished}</li>
       <li><span class="title">Production:</span> ${parsedFactory.productionCapacity} cars per year</li>
       <li><span class="title">Cars Available for Sale:</span> ${parsedFactory.inventory.availableForSale}</li>
       <li><span class="title">Used Cars Available:</span> ${parsedFactory.usedCars}</li>
-      <li><span class="title">Certification:</span> ${parsedFactory.certified}</li>
+      <li><span class="title">Certification:</span> ${parsedFactory.certified? "Certified in 2025" : "Awaiting Certification"}</li>
       <li><span class="title">CEO:</span> ${parsedFactory['General Managers'][0] + ', ' + parsedFactory['General Managers'][1]}</li>
     `;
 
-
+/**
+ * Displays the car details on the webpage
+ */
 parsedCars.forEach((car) => {
   const ul = document.createElement("ul");
     ul.innerHTML = `
@@ -162,16 +189,15 @@ parsedCars.forEach((car) => {
     <li><span class="title">Fuel:</span> ${car.fuel}</li>
     <li><span class="title">Transmission:</span> ${car.transmission}</li>
     <li><span class="title">Price:</span> ${car.price}</li>
-    <li><span class="title">New:</span> ${car.new}</li>
-    <li><span class="title">Features:</span> ${car.features}</li>
+    <li><span class="title">New:</span> ${car.new ? "Yes" : "Used"}</li>
+    <li><span class="title">Features:</span> ${car.features.join(", ")}</li>
     <li><span class="title">Engine:</span> 
         Type: ${car.engine.type}, 
         Cylinders: ${car.engine.cylinders}, 
         Horsepower: ${car.engine.horsepower}, 
         Fuel Economy: ${car.engine.fuelEconomy.city} city / ${car.engine.fuelEconomy.highway} highway
     </li>
-    <li><span class="title">Description:</span> ${car.description}</li>
+    <li><span class="title">Description:</span> ${car.description || "No description available"}</li>
     <br>  `;
     cars.appendChild(ul);
-
 });
