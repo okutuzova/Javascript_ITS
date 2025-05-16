@@ -1,0 +1,28 @@
+{
+    "id": 3,
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": "2021",
+    "color": "red",
+    "mileage": null,
+    "fuel": "gasoline",
+    "transmission": "automatic",
+    "price": 60000,
+    "new": true,
+    "features": [
+        "GPS",
+        "Bluetooth",
+        "Backup Camera",
+        "Cruise Control",
+        "Keyless Entry"
+    ],
+    "engine": {
+        "type": "inline-4",
+        "cylinders": 4,
+        "horsepower": 169,
+        "fuelEconomy": {
+            "city": "30 mpg",
+            "highway": "38 mpg"
+        }
+    }
+}

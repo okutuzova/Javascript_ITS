@@ -40,7 +40,10 @@ Functions:
 `showCars()` displays each car as a list item with an expandable form for editing. A foreach loop is used to iterate over the cars array and create the list items.
 `updateCarData()` updates the details of a car with the provided data using PUT method for the request and JSON.stringify() to convert the object into JSON.
 
-
+### Errors Handling
+For simulation of errors:
+- In the dev tools, on the network tab, right click on the request, select block domain request. This allows to test a network error.
+- Delete or change a JSON blob ID in the URL to simulate the 404 error.
 
 ## JSON Blobs:
 ### Links:

@@ -43,12 +43,20 @@ function getDataXHR(URL, callback) {
     request.open('GET', URL);
     request.onload = function() {
         if (request.status === 200) {
-            const data = JSON.parse(request.responseText);
-            callback(data);
+            // handling parsing errors
+            try {
+                const data = JSON.parse(request.responseText);
+                callback(data);
+            } catch (parseError) {
+                console.error('Error parsing JSON:', parseError);
+                handleError('Error parsing JSON data.');
+            }
+            // handling http errors
         } else {
-            handleError(`Request didn't load successfully. Error code: ${request.statusText}`);
+            handleError(`Request didn't load successfully. Error code: ${request.status}`);
         }
     };
+    // handling network errors
     request.onerror = () => {
         handleError('Network error'); 
     };
@@ -152,22 +160,17 @@ function showCars(carsData) {
     carList.innerHTML = "";
     carsData.forEach((car) => {
         const li = document.createElement("li");
-        
         // Create and append header with toggle button
         const { header, toggleButton } = createCarHeader(car);
         li.appendChild(header);
-
         // Create and append edit panel
         const panel = createEditPanel(car);
         li.appendChild(panel);
-
         // Setup toggle functionality
         setToggleButton(toggleButton, panel);
-
         // Create and append save button
         const saveButton = createSaveButton(car, panel, carsData);
         panel.appendChild(saveButton);
-
         carList.appendChild(li);
     });
 }
@@ -184,10 +187,18 @@ function updateCarData(carsData) {
         if (request.status === 200) {
            getDataXHR(carsURL, showCars); 
         } else {
-            handleError(`Request didn't load successfully. Error code: ${request.statusText}`);
+            handleError(`Request didn't load successfully. Error code: ${request.status}`);
         }
     };
-    request.send(JSON.stringify(carsData));
+    request.onerror = () => {
+        handleError('Network error');
+    };
+    try {
+        request.send(JSON.stringify(carsData));
+    } catch (error) {
+        handleError(`Error sending data: ${error.message}`);
+    }
+    
 }
 
 getDataXHR(factoryURL, showFactory);
