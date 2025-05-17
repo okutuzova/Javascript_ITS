@@ -1,11 +1,11 @@
 /**
  * @file: main.js
  * @author: Olga Kutuzova
- * Exercise 04-parallel-factory
+ * Exercise 04-parallel-factory-fetch
  * 
  * This script fetches the factory details and the list of cars from the remote JSON sources, 
  * and displays them in the DOM using async requests.
- * 
+ * The Fetch API is used.
  */
 
 /**
@@ -57,6 +57,8 @@ const progressText = document.getElementById("progress");
  * @type {number}
  */
 let loadedCars = 0;
+// Show loader before starting requests
+loader.classList.remove("hidden");
 
 /**
  * Displays an error message on the page
@@ -86,47 +88,37 @@ function handleRequestComplete() {
     }
 }
 
-
 /**
- * Fetches JSON data from a URL using XMLHttpRequest
+ * Fetches JSON data from a URL using fetch API
+ * @param {string} URL - The URL to fetch data from
+ * @returns {Promise<Object>} - A promise that resolves to the parsed JSON data
+ */
+function fetchJSON(URL) {
+    return fetch(URL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error. Status: ${response.status}`);
+            }
+            return response.json().catch(error => {
+                throw new Error(`Error parsing JSON: ${error.message}`);
+            });
+        });
+}
+/**
+ * Fetches JSON data from a URL using fetch
  * @param {string} URL - The URL to fetch data from
  * @param {Function} callback - The function to call with the parsed data
  */
-function getDataXHR(URL, callback) {
-    const request = new XMLHttpRequest();
-    request.open('GET', URL, true);
-    request.onreadystatechange = function() {
-        // Only check when request is complete
-        if (request.readyState === XMLHttpRequest.DONE) {  
-            if (request.status === 200) {
-                // handling parsing errors
-                try { 
-                    const data = JSON.parse(request.responseText);
-                    callback(data);
-                } catch (parseError) {
-                    console.error('Error parsing JSON:', parseError);
-                    handleError('Error parsing JSON data.');
-                }
-                // handling http errors
-            } else {
-                console.error(`Request failed with status: ${request.status} from ${URL}`);
-                handleError(`Failed to fetch data from ${URL}. Error code: ${request.status}`);
-            }
-            handleRequestComplete();
-        }
-    };
-    // handling network errors
-    request.onerror = () => {
-        console.error('Network error'); 
-        handleError('Network error');
-        handleRequestComplete(); // still count as complete even if there's an error
-    };
-    request.send();
+function getData(URL, callback) {
+    fetchJSON(URL)
+       .then(data => callback(data))
+       .catch(error => {
+            console.error('Error fetching data:', error);
+            handleError('Failed to fetch data.');
+        })
+        .finally(() => handleRequestComplete());
 }
-
-// Show loader before starting requests
-loader.classList.remove("hidden");
-
+        
 /**
  * Displays factory details on the page
  * @param {Object} factoryData - The factory data to display
@@ -145,7 +137,6 @@ function showFactory(factoryData) {
     </details>
   `;
 }
-
 
 /**
  * Displays car details on the page
@@ -179,8 +170,8 @@ function showCar(carData) {
     cars.appendChild(ul);
 }
 // Fetch factory info
-getDataXHR(factoryURL, showFactory);
+getData(factoryURL, showFactory);
 // Fetch all cars info in parallel
 carsURLs.forEach((URL) => {
-    getDataXHR(URL, showCar);
+    getData(URL, showCar);
 });

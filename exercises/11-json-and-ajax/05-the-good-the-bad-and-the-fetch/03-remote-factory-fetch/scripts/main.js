@@ -1,13 +1,19 @@
 /**
  * @file: main.js
  * @author: Olga Kutuzova
- * Exercise 03-remote-factory
+ * Exercise 03-remote-factory-fetch
  * 
  * This script fetches the factory details and the list of cars from the remote JSON sources, 
  * and displays them in the DOM.
- * The user can edit the car details and save the changes. 
+ * The user can edit the car details and save the changes. Fetch API is used.
  */
 
+/** @type {HTMLElement} */
+const carList = document.getElementById("carList");
+/** @type {HTMLElement} */
+const factory = document.getElementById("factoryDetails");
+/** @type {HTMLElement} */
+const errorMessage = document.getElementById("errorMessage");
 /**
  * URL to fetch factory data from JSONBlob
  * @type {string}
@@ -18,12 +24,6 @@ const factoryURL = 'https://jsonblob.com/api/1371508605303578624';
  * @type {string}
  */
 const carsURL = 'https://jsonblob.com/api/1371824607446884352';
-/** @type {HTMLElement} */
-const carList = document.getElementById("carList");
-/** @type {HTMLElement} */
-const factory = document.getElementById("factoryDetails");
-/** @type {HTMLElement} */
-const errorMessage = document.getElementById("errorMessage");
 
 /**
  * Displays an error message on the page
@@ -33,35 +33,38 @@ function handleError(message) {
     errorMessage.textContent = message;
 }
 
-/**
- * Fetches JSON data from a URL using XMLHttpRequest
- * @param {string} URL - The URL to fetch data from
- * @param {Function} callback - The function to call with the parsed data
- */
-function getDataXHR(URL, callback) {
-    const request = new XMLHttpRequest();
-    request.open('GET', URL);
-    request.onload = function() {
-        if (request.status === 200) {
-            // handling parsing errors
-            try {
-                const data = JSON.parse(request.responseText);
-                callback(data);
-            } catch (parseError) {
-                console.error('Error parsing JSON:', parseError);
-                handleError('Error parsing JSON data.');
+function getData(URL) {
+    fetch(URL) // returns Promise<Response>
+        .then(response => {
+            // Handle HTTP errors
+            if (!response.ok) {
+                    throw new Error(`Resource didn't load successfully. Error code: ${response.status}`);
             }
-            // handling http errors
-        } else {
-            handleError(`Request didn't load successfully. Error code: ${request.status}`);
-        }
-    };
-    // handling network errors
-    request.onerror = () => {
-        handleError('Network error'); 
-    };
-    // send the request
-    request.send();
+            // parse JSON → returns Promise<object>
+            // Handle parsing errors
+            return response.json().catch(parseError => {
+                console.error('Error parsing JSON:', parseError);
+                throw new Error('Error parsing JSON data.');
+            });
+        })
+        .then(data => {
+            // uncomment for debugging purpose to check the data fetched
+            // console.log("Data received:", data);
+            if (URL === factoryURL) {
+                showFactory(data);
+            } else if (URL === carsURL) {
+                showCars(data);
+            }
+        })
+        .catch(error => {
+            // Handle network errors 
+            if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+                handleError('Network error.');    
+            } else {
+                handleError(error.message);
+            }
+            console.error('Error fetching data:', error);
+        });
 }
 
 /**
@@ -125,8 +128,8 @@ function createEditPanel(car) {
 function setToggleButton(toggleButton, panel) {
     toggleButton.addEventListener("click", () => {
         panel.classList.toggle("hidden"); 
-        toggleButton.textContent = panel.
-        classList.contains("hidden") ? "Show details" : "Hide details"; // Update button text based on panel visibility
+        toggleButton.textContent = panel.classList.contains
+        ("hidden") ? "Show details" : "Hide details"; // Update button text based on panel visibility
     });
 }
 
@@ -180,27 +183,26 @@ function showCars(carsData) {
  * @param {Array<Object>} carsData - Updated car list to send
  */
 function updateCarData(carsData) {
-    const request = new XMLHttpRequest();
-    request.open('PUT', carsURL);
-    request.setRequestHeader('Content-Type', 'application/json'); 
-    request.onload = function() {
-        if (request.status === 200) {
-           getDataXHR(carsURL, showCars); 
-        } else {
-            handleError(`Request didn't load successfully. Error code: ${request.status}`);
-        }
-    };
-    request.onerror = () => {
-        handleError('Network error');
-    };
-    try {
-        request.send(JSON.stringify(carsData));
-    } catch (error) {
-        handleError(`Error sending data: ${error.message}`);
-    }
-    
+    fetch(carsURL, { 
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        }, 
+        body: JSON.stringify(carsData),
+    }) 
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Network error. Status: ${response.status}`);
+        } 
+        return response.json();
+    })
+   .then(data => {
+        showCars(data);
+    }) 
+    .catch(error => {
+        console.error('Error sending data:', error);
+        handleError(error.message); 
+    });
 }
-
-getDataXHR(factoryURL, showFactory);
-getDataXHR(carsURL, showCars);
-  
+getData(factoryURL);
+getData(carsURL);

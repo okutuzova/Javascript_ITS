@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-size: 16px;
+}
+.container {
+   width: 960px; 
+   margin: 0 auto;
+}
+h1, h2{
+    color: rgb(4, 4, 158);
+}
+.title {
+    font-weight: bold;
+}
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none;  
+}
+
+.loader {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.loader.hidden {
+    display: none;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(4, 4, 158);
+    transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#errorMessage {
+  display: block; 
+  color: red;
+  font-weight: bold;
+}
+
+.carHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+    color: rgb(4, 4, 158);
+}
+

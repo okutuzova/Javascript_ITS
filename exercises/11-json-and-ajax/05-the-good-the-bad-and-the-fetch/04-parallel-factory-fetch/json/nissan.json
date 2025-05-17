@@ -1,0 +1,27 @@
+{
+    "id": 4,
+    "brand": "Nissan",
+    "model": "Altima",
+    "year": "2022",
+    "color": "gray",
+    "mileage": null,
+    "fuel": "gasoline",
+    "transmission": "automatic",
+    "price": 38000,
+    "new": true,
+    "features": [
+        "Bluetooth",
+        "Backup Camera",
+        "Cruise Control"
+    ],
+    "engine": {
+        "type": "inline-4",
+        "cylinders": 4,
+        "horsepower": 182,
+        "fuelEconomy": {
+            "city": "28 mpg",
+            "highway": "39 mpg"
+        }
+    },
+    "description": "A sleek and modern Altima with excellent highway efficiency."
+}

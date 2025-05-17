@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+}
+.container {
+   width: 960px; 
+   margin: 0 auto;
+   
+}
+.title {
+    font-weight: bold;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    
+}
+
+#errorMessage {
+  display: block; 
+  color: red;
+}
+
+.carHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel {
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background-color: #f5f5f5;
+}
+.panel.hidden {
+    display: none
+}

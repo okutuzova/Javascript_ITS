@@ -1,0 +1,28 @@
+{
+    "id": 5,
+    "brand": "Mazda",
+    "model": "Mazda3",
+    "year": "2021",
+    "color": "white",
+    "mileage": null,
+    "fuel": "gasoline",
+    "transmission": "automatic",
+    "price": 37000,
+    "new": true,
+    "features": [
+        "GPS",
+        "Bluetooth",
+        "Backup Camera",
+        "Cruise Control"
+    ],
+    "engine": {
+        "type": "inline-4",
+        "cylinders": 4,
+        "horsepower": 186,
+        "fuelEconomy": {
+            "city": "27 mpg",
+            "highway": "36 mpg"
+        }
+    },
+    "description": "A sporty and responsive Mazda3, fun to drive and efficient."
+}
