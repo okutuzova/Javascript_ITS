@@ -153,8 +153,16 @@ const carsJSON = `[
 /**
  * Parses the JSON strings into JavaScript objects
  */
-const parsedFactory = JSON.parse(factoryJSON);
-const parsedCars = JSON.parse(carsJSON);
+let parsedFactory;
+let parsedCars;
+try {
+    parsedFactory = JSON.parse(factoryJSON);
+    parsedCars = JSON.parse(carsJSON);
+} catch (error) {
+    console.error("Error parsing JSON:", error); 
+}
+
+
 
 /** @type {HTMLElement} */
 const cars = document.getElementById("carList");

@@ -3,7 +3,8 @@
  * @author: Olga Kutuzova
  * Exercise 04-parallel-factory
  * 
- * This script fetches the factory details and the list of cars from the remote JSON sources, 
+ * This script fetches the factory details,
+ * and the list of cars from the remote JSON sources, 
  * and displays them in the DOM using async requests.
  * 
  */
@@ -46,7 +47,7 @@ const factory = document.getElementById("factoryDetails");
 const cars = document.getElementById("carList");
 /** @type {HTMLElement} */
 const errorMessage = document.getElementById("errorMessage");
-/** @type {HTMLElement} *//** @type {HTMLElement} */
+/** @type {HTMLElement} */
 const loader = document.getElementById("loader");
 /** @type {HTMLElement} */
 const progressBar = document.getElementById("progress-fill");
