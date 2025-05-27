@@ -1,11 +1,12 @@
 /**
- * @file: main.js
+ * @file: solution-02.js
  * @author: Olga Kutuzova
  * Exercise 01-soundwave
  * 
  * This script creates an array of noises, 
  * capitalizes letter by letter of each noise, 
  * and adds an exclamation point to each noise.
+ * A flatMap method is used. 
  */
 
 /**
@@ -35,9 +36,7 @@ function capitalizeLetter(string) {
  *
  * @type {string[]}
  */
-let noiseArray2 = noisesArray.map(capitalizeLetter).reduce(function (accu, curr) {
-    return accu.concat(curr);
-}, []);
+let noiseArray2 = noisesArray.flatMap(capitalizeLetter);
 
 // Output the final result to the console
 console.log(noiseArray2);

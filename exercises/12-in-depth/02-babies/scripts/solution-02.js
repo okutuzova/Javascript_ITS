@@ -1,4 +1,18 @@
+/**
+ * @file: solution-02.js
+ * @author: Olga Kutuzova
+ * Exercise 02-babies
+ * 
+ * This script demonstrates another way of adding to the array.
+ * Here, each cat object is pushed directly into the array without using a variable.
+ */
+
+/**
+ * List of cat objects.
+ * @type {Object[]}
+ */
 let cats = [];
+// Directly pushing cat objects into the cats array
 cats.push({
     name: "Fluffy",
     months: 10,
