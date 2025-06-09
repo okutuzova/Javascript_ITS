@@ -8,9 +8,9 @@
 
 /**
  * Custom implementation of Array.prototype.filter using reduce.
- * @param {array} arr - The array to be filtered.
+ * @param {Array} arr - The array to be filtered.
  * @param {function} callback - A function that determines whether a value should be included.
- * @returns {array} A new array containing only elements for which the callback returned true.
+ * @returns {Array} A new array containing only elements for which the callback returned true.
  */
 function myFilter(arr, callback ) {
     return arr.reduce((acc, current) => {

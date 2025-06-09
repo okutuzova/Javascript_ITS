@@ -8,7 +8,7 @@
 
 /**
  * Custom implementation of Array.prototype.forEach using reduce.
- * @param {array} arr - The array to iterate over.
+ * @param {Array} arr - The array to iterate over.
  * @param {} callback - The function to call for each element.
  * @returns {void}
  */
