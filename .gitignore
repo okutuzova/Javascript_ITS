@@ -1,2 +1,6 @@
 cmder
+data/
+node_modules/
+dist/
+
 
