@@ -1,0 +1,260 @@
+// Variables
+$font-main: 'Roboto', sans-serif;
+$font-weight-max: 900;
+
+$color-primary: #215f84;
+$color-primary-dark: #000000;
+$color-bg-light: #f8f9fa;
+$color-white: #ffffff;
+$color-nav-link: #9a9c9e;
+$color-highlight: red;
+
+
+$radius-lg: 15px;
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+
+// Mixins
+@mixin respond($breakpoint) {
+    @if $breakpoint == sm {
+      @media (min-width: 576px) { @content; }
+    } @else if $breakpoint == md {
+      @media (min-width: 768px) { @content; }
+    } @else if $breakpoint == lg {
+      @media (min-width: 992px) { @content; }
+    }
+}
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: $font-main;
+}
+
+// Layout
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+  
+main {
+    flex: 1;
+}
+
+.col {
+    margin-top: $spacing-lg;
+}
+
+// Typography and Elements
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 $spacing-sm;
+    
+    h1 {
+      color: $color-white;
+      font-weight: $font-weight-max;
+      text-align: center;
+      max-width: 100%;
+    }
+}
+
+h2 {
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.highlight {
+    color: $color-highlight;
+}
+
+.btn {
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-bg-light;
+    color: $color-primary-dark;
+  }
+}
+
+.bg-light-custom {
+  background-color: $color-bg-light;
+}
+
+// Navigation
+.navbar {
+  background-color: #212529;
+}
+
+.logo-img {
+    height: auto;
+    max-height: 30px; 
+
+    @include respond(sm) {
+        max-height: 50px;
+    }
+}
+  
+.nav-link {
+    color: $color-nav-link;
+    
+    &:hover, &:focus {
+      color: $color-bg-light;
+    }
+
+    
+    &.active {
+      color: $color-white !important;
+    }
+}
+
+.dropdown-item {
+    color: $color-primary-dark;
+    
+    &:hover, &:focus {
+      color: $color-primary-dark;
+    }
+}
+  
+// Header
+header {
+    min-height: 400px;
+    max-height: 100vh;
+    width: 100%;
+    background: url("../img/chitarre-in-fila-header.webp") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+}
+
+// Container
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+
+    @include respond(lg) {
+        max-width: 960px;
+    }
+}
+
+
+// Card
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: $shadow-md;
+  overflow: hidden;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      flex-grow: 1;
+      overflow: hidden;
+      text-align: left;
+    }
+
+
+    a.btn {
+      align-self: flex-start;
+      min-width: 130px;
+      text-align: center;
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  background-image: url('../img/concerto-call-to-action.webp'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh; 
+  position: relative;
+
+}
+
+// white block transparent
+.cta-overlay {
+  background-color: rgba(255, 255, 255, 0.85); 
+  color: #000;
+  max-width: 800px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+
+// Footer
+footer {
+    background-color: #212529;
+    color: $color-nav-link;
+    padding: $spacing-md;
+    text-align: center;
+    font-size: 0.9rem;
+    
+    a {
+      color: $color-bg-light;
+      text-decoration: underline;
+    }
+}
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  

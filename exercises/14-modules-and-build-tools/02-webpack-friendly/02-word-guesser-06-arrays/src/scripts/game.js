@@ -5,12 +5,20 @@ import { updateWordDisplay, showMessage, disableButtons, enableAllButtons } from
 let word = "", guessedWord = [], attempts = 6;
 let canvas, ctx;
 
+/**
+ * Initializes the canvas and drawing context for the hangman figure.
+ * 
+ * @param {HTMLCanvasElement} cnv - The canvas element where the hangman will be drawn.
+ */
 export function initGameElements(cnv) {
-    
     canvas = cnv;
     ctx = canvas.getContext("2d"); // 2D rendering context
 }
 
+/**
+ * Starts a new game by resetting all variables, selecting a new word,
+ * and updating the display and canvas.
+ */
 export function startNewGame() {
     word = words[Math.floor(Math.random() * words.length)].toLowerCase(); 
     guessedWord = Array(word.length).fill('_');
@@ -41,6 +49,11 @@ export function handleGuess(letter, button) {
     checkStatus();
 }
 
+/**
+ * Checks the current game status:
+ * - If the player has guessed all letters: show win message.
+ * - If no attempts remain: show lose message and the correct word.
+ */
 function checkStatus() {
     if (!guessedWord.includes('_')) { 
         showMessage("🏆 You Win!");

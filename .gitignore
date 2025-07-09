@@ -2,5 +2,8 @@ cmder
 data/
 node_modules/
 dist/
-
+**/node_modules/
+**/bower_components/
+**/dist/
+**/build/
 

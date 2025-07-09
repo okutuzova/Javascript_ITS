@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Size of the screen -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Compatibility mode for Internet Explorer -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Armonia Musicale. Strumenti ed acessori musicali</title>
+
+  <meta name="description"
+    content="Armonia Musicale. Strumenti musicali di qualità: chitarre, pianoforti, batterie, impianti audio e supporto esperto per ogni musicista.">
+  <meta name="author" content="Olga Kutuzova">
+
+  <!-- Indexation and links Following -->
+  <meta name="robots" content="index, follow">
+
+
+  <!-- OpenGraph title same as title, description 70 max-->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Armonia Musicale. Strumenti ed acessori musicali">
+  <meta property="og:url" content="www.armoniamusicale.it">
+  <meta property="og:image" content="www.armoniamusicale.it/img/logo.webp">
+  <meta property="og:description" content="Armonia Musicale. Strumenti musicali di qualità.">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Armonia Musicale. Strumenti ed acessori musicali">
+  <meta name="twitter:site" content="@www.armoniamusicale.it">
+  <meta name="twitter:description" content="Armonia Musicale. Strumenti musicali di qualità.">
+  <meta name="twitter:image" content="www.armoniamusicale.it/img/logo.webp">
+  <meta name="twitter:image:alt" content="Descrizione di immagine contenente parola chiave primaria">
+
+  <!-- Links to show Google that pages in other languages are not duplicates -->
+  <link rel="canonical" href="https://www.armoniamusicale.it/">
+  <link rel="alternate" hreflang="en" href="https://www.armoniamusicale.com/">
+  <link rel="alternate" hreflang="de" href="https://www.armoniamusicale.de/">
+  <link rel="alternate" hreflang="x-default" href="https://www.armoniamusicale.it/">
+
+  <!-- json-ld -->
+  <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Armonia Muscicale",
+            "url": "https://www.armoniamusicale.it/",
+            "logo": "https://www.armoniamusicale.it/img/logo-og.webp",
+            "description": "Armonia Musicale è il punto di riferimento per strumenti musicali di qualità: chitarre, pianoforti, batterie, impianti audio e supporto esperto per ogni musicista.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Via della Musica 123",
+              "addressLocality": "Torino",
+              "addressRegion": "Piemonte",
+              "postalCode": "20100",
+              "addressCountry": "IT"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+39 0123 456789",
+              "contactType": "Customer Service",
+              "availableLanguage": ["Italian"],
+              "email": "info@armoniamusicale.it"
+            },
+            "sameAs": [
+              "https://www.facebook.com/armoniamusicale",
+              "https://www.instagram.com/armoniamusicale"
+            ]
+          }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Armonia Musicale",
+      "url": "https://www.armoniamusicale.it/",
+      "description": "Strumenti musicali per ogni esigenza: chitarre, tastiere, batterie, impianti audio e accessori con assistenza esperta.",
+      "mainEntity": [
+        {
+          "@type": "WebPage",
+          "name": "Chitarre e Bassi",
+          "url": "https://www.armoniamusicale.it/strumenti-chitarre",
+          "description": "Scopri la selezione di chitarre elettriche, acustiche e bassi delle migliori marche."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Accessori Musicali",
+          "url": "https://www.armoniamusicale.it/accessori-musicali",
+          "description": "Cavi, plettri, amplificatori, custodie, metronomi e altri accessori per musicisti."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Batterie e Percussioni",
+          "url": "https://www.armoniamusicale.it/batterie-percussioni",
+          "description": "Batterie acustiche, elettroniche, percussioni etniche e accessori."
+        }
+      ]
+    }
+    </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Link to Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <!-- Link to Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <main>
+
+      <!-- Navigation Panel -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./img/logo-armonia-musicale.webp" alt="logo di Armonia Musicale - una icona di chotarra elettrica" class="img-fluid logo-img">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" title="Chi Siamo Page">Chi Siamo</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" title="Scopri Nostri Prodotti">
+                  Prodotti
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Prodotto 1</a></li>
+                  <li><a class="dropdown-item" href="#">Prodotto 2</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Scarica il catalogo</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false" title="Nostri Servizi">
+                  Servizi
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Competenza 1</a></li>
+                  <li><a class="dropdown-item" href="#">Competenza 2</a></li>
+                  <li><a class="dropdown-item" href="#">Competenza 3</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" title="Contattaci">Contatti</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header -->
+      <header class="title">
+        <h1>
+          Armonia Musicale<br> 
+          <span class="h2">Strumenti ed accessori musicali</span>
+        </h1>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <div class="container">
+
+        <!-- General Section without photo -->
+        <section>
+          <div class="container mb-4">
+            <h2>Benvenuti nel <span class="highlight">m</span>ondo di <span class="highlight">A</span>rmonia <span
+                class="highlight">M</span>usicale</h2>
+            <p>Armonia Musicale è il punto di riferimento per tutti gli appassionati di musica, dai principianti agli
+              esperti. Situato nel cuore della città, il nostro negozio offre un'ampia selezione di strumenti musicali e
+              accessori pensati per soddisfare ogni esigenza.</p>
+            <p>
+              Da più di 20 anni, ci impegniamo a fornire ai nostri clienti prodotti di qualità delle migliori marche, un
+              servizio clienti attento e una consulenza personalizzata. La nostra missione è aiutarti a trovare lo
+              strumento perfetto per esprimere la tua passione musicale.</p>
+          </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section class="container my-5">
+          <h2>Cosa troverai <span class="highlight">d</span>a Armonia <span class="highlight">M</span>usicale?</h2>
+          <div class="row g-4">
+
+            <!-- Card 1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card h-100">
+                <figure class="m-0">
+                  <picture>
+                    <source srcset="img/chitarre-elettriche-bassi.avif" type="image/avif">
+                    <source srcset="img/chitarre-elettriche-bassi.webp" type="image/webp">
+                    <img src="img/chitarre-elettriche-bassi.jpg" class="card-img-top img-fluid w-100" alt="Chitarre elettriche e bassi in luce rossa">
+                  </picture>
+                </figure>
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title">Chitarre e bassi</h3>
+                  <p class="card-text">Scopri la nostra vasta selezione di chitarre e bassi, pensata per soddisfare
+                    musicisti di ogni livello e stile.</p> 
+               
+                  <div class="mt-auto d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary" title="Lasciati consigliare dal nostro staff esperto per trovare la chitarra o il basso che meglio si adatta al tuo stile e alle tue esigenze.">Scopri</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card h-100">
+                <figure class="m-0">
+                  <picture>
+                    <source srcset="img/pianoforte-classico-note.avif" type="image/avif">
+                    <source srcset="img/pianoforte-classico-note.webp" type="image/webp">
+                    <img src="img/pianoforte-classico-note.jpg" class="card-img-top img-fluid w-100" alt="Tastiera bianco nera di uno pianoforte classico con note">
+                  </picture>
+                </figure>
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title">Tastiere e pianoforti</h3>
+                  <p class="card-text">Entra nel mondo delle tastiere e dei pianoforti, dove la tradizione incontra l'innovazione.</p> 
+                  
+                  <div class="mt-auto d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary" title="Vieni a provare i nostri strumenti e lasciati ispirare dal loro suono unico.">Scopri</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card h-100">
+                <figure class="m-0">
+                  <picture>
+                    <source srcset="img/set-batterie-rock.avif" type="image/avif">
+                    <source srcset="img/set-batterie-rock.webp" type="image/webp">
+                    <img src="img/set-batterie-rock.jpg" class="card-img-top img-fluid w-100" alt="Una set di batterie e percussioni per rock musica">
+                  </picture>
+                </figure>
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title">Batterie e percussioni</h3>
+                  <p class="card-text">Dai ritmo alla tua musica con la nostra ampia gamma di batterie e percussioni!</p>
+                    
+                  <div class="mt-auto d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary" title="I nostri esperti sono a disposizione per aiutarti a scegliere la batteria o le percussioni che meglio si adattano al tuo stile e alle tue esigenze.">Scopri</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card h-100">
+                <figure class="m-0">
+                  <picture>
+                    <source srcset="img/audio-luci-controllo-interfaccia.avif" type="image/avif">
+                    <source srcset="img/audio-luci-controllo-interfaccia.webp" type="image/webp">
+                    <img src="img/audio-luci-controllo-interfaccia.jpg" class="card-img-top img-fluid w-100" alt="Audio e luci interfaccia di controllo">
+                  </picture>
+                </figure>
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title">Impianti audio e luci</h3>
+                  <p class="card-text">Porta la tua musica a un livello superiore con i nostri impianti audio e luci
+                    professionali.</p> 
+
+                  <div class="mt-auto d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary" title="Troverai mixer audio, casse amplificate, microfoni wireless, sistemi PA e tutto ciò che serve per un'ottima resa sonora.">Scopri</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- Call to Action Section -->
+      <section class="cta-section text-center text-white d-flex align-items-center">
+        <div class="container">
+          <div class="cta-overlay p-4 p-md-5 rounded-3 mx-auto">
+            <h2 class="mb-3">Iscriviti alla nostra newsletter</h2>
+            <a href="#" class="btn btn-primary">Iscriviti</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section text under photo text under photo -->
+      <div class="container">
+        <section>
+          <h2>Perché <span class="highlight">s</span>cegliere Armonia <span class="highlight">M</span>usicale?</h2>
+          <!-- Img left, txt right -->
+          <div class="row align-items-stretch g-0">
+        <div class="col-md-6">
+          <figure class="m-0 h-100">
+            <picture>
+              <source srcset="img/amplificatori-JBL.avif" type="image/avif">
+              <source srcset="img/amplificatori-JBL.webp" type="image/webp">
+              <img class="img-fluid w-100 object-fit-cover" src="img/amplificatori-JBL.jpg" alt="Amplificatore JBL per chitarra elettrica">
+            </picture>
+          </figure>
+        </div>
+        <div class="col-md-6 p-0">
+          <div class="bg-light-custom d-flex flex-column justify-content-center h-100 p-4">
+            <h3>Esperienza e competenza</h3>
+            <p>Il nostro staff è composto da musicisti esperti che condividono una passione autentica per la musica.</p>
+            <div class="collapse mt-3" id="extra-text-esperienza">
+              <p>Grazie alla loro esperienza pluriennale, sono in grado di guidarti nella scelta dello strumento più adatto alle tue esigenze, offrendoti consigli tecnici e pratici.</p>
+
+                <p>Che tu sia un principiante in cerca del tuo primo strumento o un professionista alla ricerca di un upgrade, il nostro team saprà ascoltarti e proporti soluzioni personalizzate. Inoltre, possiamo aiutarti a comprendere le caratteristiche tecniche di ogni prodotto, spiegandoti come ottenere il massimo dal tuo strumento.</p>
+            </div>
+            <a href="#" class="btn btn-primary mt-3 mb-3 align-self-start" data-bs-toggle="collapse" data-bs-target="#extra-text-esperienza">Scopri di più</a>
+          </div>
+        </div>
+      </div>
+
+          <!-- Img right, txt left -->
+         <div class="row align-items-stretch g-0">
+            <div class="col-md-6 order-md-2">
+              <figure class="m-0">
+                <picture>
+                  <source srcset="img/bottoni-colorati-di-mixer-controller.avif" type="image/avif">
+                  <source srcset="img/bottoni-colorati-di-mixer-controller.webp" type="image/webp">
+                  <img class="img-fluid" src="img/bottoni-colorati-di-mixer-controller.jpg" alt="Una interfaccia di controllo di mixer con bottoni e valvole">
+                </picture>
+              </figure>
+            </div>
+            <div class="col-md-6 order-md-1 d-flex flex-column justify-content-center g-5">
+              <h3>Servizi personalizzati</h3>
+              <p>Da noi, la cura degli strumenti è una priorità. Offriamo una gamma completa di servizi personalizzati per garantire che il tuo strumento sia sempre nelle migliori condizioni.</p>
+              <div class="collapse mt-3" id="extra-text-servizi">
+                <p>
+                  <span class="highlight">R</span>iparazioni: Il nostro laboratorio interno è attrezzato per effettuare riparazioni su chitarre, bassi, tastiere, batterie e altri strumenti. Dalle piccole regolazioni ai lavori più complessi, ci prendiamo cura di ogni dettaglio.</p>
+
+                <p><span class="highlight">M</span>anutenzione: Per prolungare la vita del tuo strumento e mantenerne la qualità sonora, offriamo servizi di manutenzione periodica, come la sostituzione delle corde, la pulizia dei tasti o la calibrazione dei componenti elettronici.</p>
+
+                <p><span class="highlight">A</span>ccordatura: Se hai un pianoforte, una chitarra o altri strumenti che richiedono accordature regolari, i nostri tecnici specializzati sono pronti a intervenire per garantire un suono perfetto.
+                </p>
+
+              </div>
+              <a href="#" class="btn btn-primary mt-3 mb-3 align-self-start" data-bs-toggle="collapse" data-bs-target="#extra-text-servizi" aria-expanded="false" aria-controls="extra-text-servizi">Scopri di più</a>
+            </div>
+          </div>
+
+          <!-- Img left, text right -->
+          <div class="row align-items-stretch g-0">
+            <div class="col-md-6">
+              <figure class="m-0 h-100">
+                <picture>
+                  <source srcset="img/mix-di-microfoni-cuffie-amplificatori.avif" type="image/avif">
+                  <source srcset="img/mix-di-microfoni-cuffie-amplificatori.webp" type="image/webp">
+                  <img class="img-fluid" src="img/mix-di-microfoni-cuffie-amplificatori.jpg" alt="Un mix di amplificatori, cuffie, chotarre, microfoni uniti insieme in una palla grande">
+                </picture>
+              </figure>
+            </div>
+            <div class="col-md-6 p-0">
+              <div class="bg-light-custom d-flex flex-column justify-content-center h-100 p-4">
+              <h3>Eventi e corsi</h3>
+              <p>Crediamo che la musica sia un linguaggio universale che unisce le persone, ed è per questo che organizziamo una varietà di eventi e corsi per avvicinare tutti, grandi e piccoli, al mondo della musica.</p>
+              <div class="collapse mt-3" id="extra-text-eventi">
+                <p><span class="highlight">W</span>orkshop: Partecipa ai nostri laboratori pratici per imparare nuove tecniche, scoprire strumenti innovativi e approfondire generi musicali specifici.</p>
+
+                  <p><span class="highlight">C</span>oncerti: Il nostro negozio ospita regolarmente concerti dal vivo, offrendo a musicisti emergenti e affermati l’opportunità di esibirsi davanti a un pubblico appassionato.</p>
+                  
+                  <p><span class="highlight">L</span>ezioni: Offriamo corsi individuali e di gruppo per imparare a suonare strumenti come chitarra, pianoforte, batteria e molto altro. Gli insegnanti sono musicisti qualificati, pronti a trasmettere le loro conoscenze con passione e professionalità.</p>
+              </div>
+              <a href="#" class="btn btn-primary mt-3 mb-5 align-self-start" data-bs-toggle="collapse" data-bs-target="#extra-text-eventi" aria-expanded="false" aria-controls="extra-text-eventi">Scopri di più</a>
+            </div>
+          </div>
+          </div>
+
+        </section>
+      </div>
+
+      
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 my-5 border-top">
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div class="col mb-3">
+          <h5>Il mondo di Armonia Musicale</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Chi siamo</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Prodotti</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Servizi</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col mb-3">
+          <h5>Link Utili</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Preferenze Cookie</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Note Legali</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Whistleblowing</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Informativa Trattamento
+                Dati</a></li>
+          </ul>
+        </div>
+        <div class="col mb-3">
+          <h5>Indirizzo</h5>
+          <address>
+            <ul>
+              <li>
+                <p>Via Esempio 123, 00100 Torino, Italia</p>
+              </li>
+              <li><a href="tel:+390612345678" class="text-decoration-none">📞 +39 06 1234 5678</a></li>
+              <li><a href="mailto:info@montepaone.it" class="text-decoration-none">✉️ info@armoniamusicale.it</a></li>
+              <li><a href="https://wa.me/393471234567" target="_blank" rel="noopener" class="text-decoration-none">
+                  💬 WhatsApp: +39 347 123 4567
+                </a></li>
+              <div class="mb-3">
+                <a href="https://facebook.com/" target="_blank" class="text-secondary mx-2 fs-4 text-decoration-none">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="text-secondary mx-2 fs-4 text-decoration-none">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a href="https://instagram.com/" target="_blank" class="text-secondary mx-2 fs-4 text-decoration-none">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank"
+                  class="text-secondary mx-2 fs-4 text-decoration-none">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+            </ul>
+          </address>
+        </div>
+
+        <!-- Optional Google Map -->
+        <div class="col mb-3">
+          <section class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2817.2001933400106!2d7.657575312481239!3d45.081733370949564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886daa5b135ab7%3A0xd6516e2b04e08248!2sVia%20Jacopo%20Durandi%2C%2010%2C%2010144%20Torino%20TO!5e0!3m2!1sen!2sit!4v1751017561625!5m2!1sen!2sit"
+              width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          </section>
+        </div>
+      </div>
+
+      <div class="col-12 text-center mt-4">
+        <p class="text-body-secondary mb-0">&copy; 2025 Olga Kutuzova. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
