@@ -40,7 +40,11 @@ For the index.html file Vite automatically injected the required <script> tags f
 Imported in the JavaScript using import './style.css'. Vite processed the CSS, added vendor prefixes if needed (through PostCSS), and included it in the final bundle.ES Modules (import/export) were handled natively during development. Vite used Rollup under the hood to bundle the JavaScript efficiently. Rollup is a tool that gathers code, deletes unused code, and bundles it into a single file.
 As the project is simple, the vite.config.js file is not created.
 
-
+In order to test the production version of the project, the following command is used:
+``` bash
+npm run preview
+```
+This command starts a local server on port 4173, and serves the production-ready version of the project. For testing http://localhost:4173/ in different browsers was opened.
 
 
 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Size of the screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compatibility mode for Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- max 70 chars, contains a main keyword-->
+    <title>Arrivals | Hogsmeade International Airport (HGM)</title>
+
+    <meta name="description" content="Arrivals at Hogsmeade Airport; 
+    View real-time flight arrival information, delays and cancelations, 
+    and current weather conditions at HGM Airport.">
+    <meta name="keywords" content="Hogsmeade">
+    <meta name="author" content="Olga Kutuzova">
+
+    <!-- Indexation and links Following -->
+    <meta name="robots" content="index, follow">
+</head>
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul class="navbar">
+                  <li><a href="#">Home</a></li>
+                  <li id="link-arrivals"><a href="#arrivals">Arrivals</a></li>
+                  <li id="link-departures"><a href="#departures">Departures</a></li>
+                  <li><a href="#info">Airport Info</a></li>
+                </ul>
+              </nav>
+            <h1 id="title"></h1>
+            <p>Live updates on all broom and incoming flights</p>
+          </header>
+        <div class="container">
+          <!-- Arrivals Content -->
+           <div id="arrivals" class="flights-section active">
+        <table id="arrivals-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Arrival Time</th>
+              <th>From</th>
+              <th>Flight</th>
+              <th>Airline</th>
+              <th>Gate</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Flight rows will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+      <div id="departures" class="flights-section">
+        <!-- Departures Content -->
+      <table id="departures-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Departure Time</th>
+            <th>To</th>
+            <th>Flight</th>
+            <th>Airline</th>
+            <th>Gate</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Flight rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+    </div>
+      </main>
+    <footer>
+      <p>&copy; 2025 Hogsmeade International Airport. All rights reserved.</p>
+    </footer>
+</body>
+</html>
