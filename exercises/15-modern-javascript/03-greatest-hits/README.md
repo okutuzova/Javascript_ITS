@@ -83,6 +83,15 @@ In 'addFlight.js' file, the following modern JS syntax is used:
 - object flight destructuring.
 - optional chaining ```if (!flight || !tableBody) return;```
 
+### Reduce All
+In this exercise not many modern features have been added, as a previous realization already included many modern features, such as ternary operators, arrow functions, template literals, etc. 
+The features added in this exercise are:
+- export/import - modern module system, using export of a const instead of a function. 
+- added arrow functions. 
+- default parameters.
+Also the structure of the project has been changed. Tests were placed in a separate file that is addressed in the entry point "main.js". Inside "main.js" also the data is dynamically added to the page using textContent property and querySelector.
+
+
 ## Files:
 - `main.js` - external javascript file.
 - `README.me` - exercise requirements and solution. 
