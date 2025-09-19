@@ -110,3 +110,10 @@ plugins: [
 HtmlWebpackPlugin automatically generates a final HTML file. It takes the template file and injects the bundle.js file into it. Favicon is also included.
 
 NB: As the production mode is not required by the exercise task, the mode is set to development and CSS extraction and minification are not used.
+
+Instructions for building and running the project:
+```javascript
+npm install
+npm run build
+npm run start (for development server).
+```

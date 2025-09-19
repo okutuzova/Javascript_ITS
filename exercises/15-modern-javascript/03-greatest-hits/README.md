@@ -92,6 +92,9 @@ The features added in this exercise are:
 Also the structure of the project has been changed. Tests were placed in a separate file that is addressed in the entry point "main.js". Inside "main.js" also the data is dynamically added to the page using textContent property and querySelector.
 
 
-## Files:
-- `main.js` - external javascript file.
-- `README.me` - exercise requirements and solution. 
+Instructions for building and running the project:
+```javascript
+npm install
+npm run build
+npm run start (for development server).
+```
