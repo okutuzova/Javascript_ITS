@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+
+
+

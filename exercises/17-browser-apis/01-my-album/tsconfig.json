@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Universal Recommended",
+
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": "src",
+
+    /* Strictness */
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noEmitOnError": true,
+
+    /* Interop & checks */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    /* Source maps for debugging */
+    "sourceMap": true
+  },
+
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

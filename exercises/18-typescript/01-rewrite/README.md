@@ -101,4 +101,25 @@ In order to avoid a conflict of devserver, the following command was used:
 npm run build
 npm run start
 ```
+
+
+### 13-object-oriented-03=strange-kebab
+In the original exercise, the task included adding a method to a String prototype. However, in Typescript this may lead to errors as the transpiler does not know that a new method is added to the String prototype. 
+
+In order to avoid errors, a trick using an empty export was implemented. Typescript thinks that a file is a module, if there is an export/import statement present. Therefore, not to pollute the global scope and modify prototypes safely, the empty export was added.
+```typescript
+export {};
+```
+With a directive declare global, it is stated that String object has a new method toStrangeKebab.
+
+```typescript
+declare global {
+  interface String {
+    toStrangeKebab(): string;
+  }
+}
+```
+
+
+
 ### Instructions for running the scripts

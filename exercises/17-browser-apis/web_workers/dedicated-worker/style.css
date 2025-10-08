@@ -1,0 +1,23 @@
+body {
+  font-size: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.tortoise,
+.hare {
+  padding: 5px;
+  border: 1px dashed black;
+  margin: 5px;
+  border-radius: 5px;
+}
+.hare {
+  background-color: #ffb74d;
+}
+.tortoise {
+  background-color: #cddc39;
+}
+#prime-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
