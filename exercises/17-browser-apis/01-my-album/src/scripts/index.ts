@@ -94,6 +94,7 @@ function saveGallery(): void {
   localStorage.setItem('myAlbum', JSON.stringify(images));
 }
 
+// === Web Worker: Get a Cat from Cat as a Service API ===
 // add a new cat with a web worker 
 function addNewCat(): void {
     const worker = new Worker(new URL('./worker.ts', import.meta.url), { type: 'module' });
